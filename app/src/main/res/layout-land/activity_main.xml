@@ -16,8 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:columnCount="4"
-        android:useDefaultMargins="true">
+        android:columnCount="4">
 
         <TextView
             android:id="@+id/textview_screen"
@@ -27,9 +26,10 @@
             android:layout_column="0"
             android:layout_columnSpan="4"
             android:layout_gravity="fill"
+            android:layout_margin="1dp"
             android:background="@color/material_dynamic_neutral90"
             android:textColor="@color/design_default_color_on_secondary"
-            android:textSize="50sp">
+            android:textSize="40sp">
 
         </TextView>
 
@@ -40,140 +40,141 @@
             android:layout_column="0"
             android:layout_columnSpan="3"
             android:layout_gravity="fill"
+            android:layout_margin="1dp"
             android:backgroundTint="@color/cardview_dark_background"
             android:text="@string/_reset"
             android:textColor="@color/material_dynamic_neutral_variant100"
-            android:textSize="@dimen/button_text" />
+            android:textSize="@dimen/button_text_landscape" />
 
         <Button
             android:id="@+id/button_multiply"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="1dp"
             android:backgroundTint="@color/cardview_dark_background"
             android:text="@string/_multiply"
             android:textColor="@color/material_dynamic_neutral_variant100"
-            android:textSize="@dimen/button_text" />
-
+            android:textSize="@dimen/button_text_landscape" />
 
         <Button
             android:id="@+id/button_7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="1dp"
             android:backgroundTint="@color/cardview_dark_background"
             android:text="@string/_7"
             android:textColor="@color/material_dynamic_neutral_variant100"
-            android:textSize="@dimen/button_text" />
-
+            android:textSize="@dimen/button_text_landscape" />
         <Button
             android:id="@+id/button_8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="1dp"
             android:backgroundTint="@color/cardview_dark_background"
             android:text="@string/_8"
             android:textColor="@color/material_dynamic_neutral_variant100"
-            android:textSize="@dimen/button_text" />
-
+            android:textSize="@dimen/button_text_landscape" />
         <Button
             android:id="@+id/button_9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="1dp"
             android:backgroundTint="@color/cardview_dark_background"
             android:text="@string/_9"
             android:textColor="@color/material_dynamic_neutral_variant100"
-            android:textSize="@dimen/button_text" />
-
+            android:textSize="@dimen/button_text_landscape" />
         <Button
             android:id="@+id/button_divide"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="1dp"
             android:backgroundTint="@color/cardview_dark_background"
             android:text="@string/_divide"
             android:textColor="@color/material_dynamic_neutral_variant100"
-            android:textSize="@dimen/button_text" />
-
+            android:textSize="@dimen/button_text_landscape" />
 
         <Button
             android:id="@+id/button_4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="1dp"
             android:backgroundTint="@color/cardview_dark_background"
             android:text="@string/_4"
             android:textColor="@color/material_dynamic_neutral_variant100"
-            android:textSize="@dimen/button_text" />
-
+            android:textSize="@dimen/button_text_landscape" />
         <Button
             android:id="@+id/button_5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="1dp"
             android:backgroundTint="@color/cardview_dark_background"
             android:text="@string/_5"
             android:textColor="@color/material_dynamic_neutral_variant100"
-            android:textSize="@dimen/button_text" />
-
+            android:textSize="@dimen/button_text_landscape" />
         <Button
             android:id="@+id/button_6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="1dp"
             android:backgroundTint="@color/cardview_dark_background"
             android:text="@string/_6"
             android:textColor="@color/material_dynamic_neutral_variant100"
-            android:textSize="@dimen/button_text" />
-
+            android:textSize="@dimen/button_text_landscape" />
         <Button
             android:id="@+id/button_plus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="1dp"
             android:backgroundTint="@color/cardview_dark_background"
             android:text="@string/_plus"
             android:textColor="@color/material_dynamic_neutral_variant100"
-            android:textSize="@dimen/button_text" />
-
+            android:textSize="@dimen/button_text_landscape" />
 
         <Button
             android:id="@+id/button_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="1dp"
             android:backgroundTint="@color/cardview_dark_background"
             android:text="@string/_1"
             android:textColor="@color/material_dynamic_neutral_variant100"
-            android:textSize="@dimen/button_text" />
-
+            android:textSize="@dimen/button_text_landscape" />
         <Button
             android:id="@+id/button_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="1dp"
             android:backgroundTint="@color/cardview_dark_background"
             android:text="@string/_2"
             android:textColor="@color/material_dynamic_neutral_variant100"
-            android:textSize="@dimen/button_text" />
-
+            android:textSize="@dimen/button_text_landscape" />
         <Button
             android:id="@+id/button_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="1dp"
             android:backgroundTint="@color/cardview_dark_background"
             android:text="@string/_3"
             android:textColor="@color/material_dynamic_neutral_variant100"
-            android:textSize="@dimen/button_text" />
-
+            android:textSize="@dimen/button_text_landscape" />
         <Button
             android:id="@+id/button_minus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="1dp"
             android:backgroundTint="@color/cardview_dark_background"
             android:text="@string/_minus"
             android:textColor="@color/material_dynamic_neutral_variant100"
-            android:textSize="@dimen/button_text" />
-
+            android:textSize="@dimen/button_text_landscape" />
         <Button
             android:id="@+id/button_0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="1dp"
             android:backgroundTint="@color/cardview_dark_background"
             android:text="@string/_0"
             android:textColor="@color/material_dynamic_neutral_variant100"
-            android:textSize="@dimen/button_text" />
-
+            android:textSize="@dimen/button_text_landscape" />
 
         <Button
             android:id="@+id/button_equals"
@@ -181,11 +182,11 @@
             android:layout_height="wrap_content"
             android:layout_columnSpan="3"
             android:layout_gravity="fill"
+            android:layout_margin="1dp"
             android:backgroundTint="@color/cardview_dark_background"
             android:text="@string/_equals"
             android:textColor="@color/material_dynamic_neutral_variant100"
-            android:textSize="@dimen/button_text" />
-
+            android:textSize="@dimen/button_text_landscape" />
     </GridLayout>
 
 
