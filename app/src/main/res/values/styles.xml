@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MyCalcButtonStyleForLand" parent="MyCalcButtonStyle">
+
+        <item name="android:layout_margin">@dimen/button_margin</item>
+        <item name="android:textSize">@dimen/button_text_landscape</item>
+
+    </style>
+
+    <style name="MyCalcButtonStyle">
+
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="backgroundTint">@color/button_color</item>
+        <item name="android:textColor">@color/button_text_color</item>
+        <item name="android:textSize">@dimen/button_text</item>
+        <item name="android:layout_gravity">fill</item>
+        <item name="cornerRadius">@dimen/button_corner_radius</item>
+
+    </style>
+
+    <style name="MyTextViewStyleForLand" parent="MyTextViewStyle">
+
+        <item name="android:layout_margin">@dimen/button_margin</item>
+        <item name="android:textSize">@dimen/textview_text_size_land</item>
+
+    </style>
+
+    <style name="MyTextViewStyle">
+
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:background">@color/textview_bg_color</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">@dimen/textview_text_size</item>
+        <item name="android:layout_gravity">fill</item>
+        <item name="android:layout_row">0</item>
+        <item name="android:layout_column">0</item>
+        <item name="android:layout_columnSpan">4</item>
+
+    </style>
+
+
+</resources>
