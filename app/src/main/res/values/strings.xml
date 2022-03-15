@@ -17,4 +17,6 @@
     <string name="_plus">+</string>
     <string name="_equals">=</string>
     <string name="_reset">C</string>
+    <string name="style_button1">Основная тема</string>
+    <string name="style_button2">Тестовая тема</string>
 </resources>
