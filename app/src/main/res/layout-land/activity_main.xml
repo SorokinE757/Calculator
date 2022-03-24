@@ -18,11 +18,12 @@
         android:layout_gravity="center"
         android:columnCount="4">
 
-        <TextView
+        <EditText
             android:id="@+id/textview_screen"
-            style="@style/MyTextViewStyleForLand">
+            style="@style/MyTextViewStyleForLand"
+            android:editable="false">
 
-        </TextView>
+        </EditText>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_reset"

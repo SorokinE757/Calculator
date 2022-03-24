@@ -19,11 +19,12 @@
         android:columnCount="4"
         android:useDefaultMargins="true">
 
-        <TextView
+        <EditText
             android:id="@+id/textview_screen"
-            style="@style/MyTextViewStyle">
+            style="@style/MyTextViewStyle"
+            android:editable="false">
 
-        </TextView>
+        </EditText>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_reset"

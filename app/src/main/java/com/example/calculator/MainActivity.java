@@ -4,30 +4,37 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView screen;
-    private String saveScreen = "";
+    private SaveOnRotate saveOnRotate = new SaveOnRotate();
+    private EditText screen;
     public static final String SAVE = "SAVE";
-
+    static int themeId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Intent myIntent = getIntent();
+        if (myIntent != null && myIntent.hasExtra(ChildActivity.STYLE)) {
+            themeId = getIntent().getIntExtra(ChildActivity.STYLE, R.style.Theme_Calculator);
+        }
+
+        setTheme(themeId);
+
         setContentView(R.layout.activity_main);
 
         initView();
 
-        if (savedInstanceState != null) {
-            saveScreen = savedInstanceState.getString(SAVE, "");
-        }
-
-        screen.setText(saveScreen);
     }
 
     private void initView() {
@@ -75,10 +82,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    private void setText(String s) {
-        saveScreen = saveScreen + s;
-        screen.setText(saveScreen);
-    }
 
     @SuppressLint({"NonConstantResourceId", "SetTextI18n"})
     @Override
@@ -86,53 +89,95 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (view.getId()) {
             case R.id.button_0:
-                setText("0");
+                screen.append("0");
                 break;
             case R.id.button_1:
-                setText("1");
+                screen.append("1");
                 break;
             case R.id.button_2:
-                setText("2");
+                screen.append("2");
                 break;
             case R.id.button_3:
-                setText("3");
+                screen.append("3");
                 break;
             case R.id.button_4:
-                setText("4");
+                screen.append("4");
                 break;
             case R.id.button_5:
-                setText("5");
+                screen.append("5");
                 break;
             case R.id.button_6:
-                setText("6");
+                screen.append("6");
                 break;
             case R.id.button_7:
-                setText("7");
+                screen.append("7");
                 break;
             case R.id.button_8:
-                setText("8");
+                screen.append("8");
                 break;
             case R.id.button_9:
-                setText("9");
+                screen.append("9");
                 break;
             case R.id.button_multiply:
-                setText("*");
+                if (screen.getText().length() != 0) {
+                    saveOnRotate.setInput1(Float.parseFloat(screen.getText() + ""));
+                    saveOnRotate.setMultiply(true);
+                    screen.setText("");
+                }
                 break;
             case R.id.button_divide:
-                setText("/");
-                break;
+                if (screen.getText().length() != 0) {
+                    saveOnRotate.setInput1(Float.parseFloat(screen.getText() + ""));
+                    saveOnRotate.setDiv(true);
+                    screen.setText("");
+                }
             case R.id.button_plus:
-                setText("+");
+                if (screen.getText().length() != 0) {
+                    saveOnRotate.setInput1(Float.parseFloat(screen.getText() + ""));
+                    saveOnRotate.setPlus(true);
+                    screen.setText("");
+                }
                 break;
             case R.id.button_minus:
-                setText("-");
+                if (screen.getText().length() != 0) {
+                    saveOnRotate.setInput1(Float.parseFloat(screen.getText() + ""));
+                    saveOnRotate.setMinus(true);
+                    screen.setText("");
+                }
                 break;
 
             case R.id.button_reset:
-                setText("");
+                screen.setText("");
+                saveOnRotate.setInput1(0);
+                saveOnRotate.setInput2(0);
                 break;
+
             case R.id.button_equals:
-                setText("=");
+                if (saveOnRotate.isPlus() || saveOnRotate.isMinus() || saveOnRotate.isMultiply() || saveOnRotate.isDiv()) {
+                    saveOnRotate.setInput2(Float.parseFloat(screen.getText() + ""));
+                }
+
+                if (saveOnRotate.isPlus()) {
+                    screen.setText(saveOnRotate.getInput1() + saveOnRotate.getInput2() + "");
+                    saveOnRotate.setPlus(false);
+                }
+                if (saveOnRotate.isMinus()) {
+                    screen.setText(saveOnRotate.getInput1() - saveOnRotate.getInput2() + "");
+                    saveOnRotate.setMinus(false);
+                }
+                if (saveOnRotate.isMultiply()) {
+                    screen.setText(saveOnRotate.getInput1() * saveOnRotate.getInput2() + "");
+                    saveOnRotate.setMultiply(false);
+                }
+                if (saveOnRotate.isDiv()) {
+                    if (saveOnRotate.getInput2() == 0) {
+                        Toast.makeText(getApplicationContext(), "На ноль делить нельзя", Toast.LENGTH_SHORT).show();
+                        screen.setText("");
+                    } else {
+                        screen.setText(saveOnRotate.getInput1() / saveOnRotate.getInput2() + "");
+                    }
+                    saveOnRotate.setDiv(false);
+                }
                 break;
         }
 
@@ -141,6 +186,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putString(SAVE, saveScreen);
+        outState.putParcelable(SAVE, saveOnRotate);
+
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        saveOnRotate = savedInstanceState.getParcelable(SAVE);
     }
 }
